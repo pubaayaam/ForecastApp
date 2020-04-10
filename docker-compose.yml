@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  forecastapp:
+    image: forecastapp:latest
+    container_name: forecast_app
+    volumes:
+      - /home/docker/docker_toolbox_mnt:/ForecastApp/example_log_mnt/
+    ports: ["8082:80"]
+    networks:
+      - back-tier
+
+networks:
+  back-tier:
